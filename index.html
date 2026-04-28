@@ -182,8 +182,7 @@
  
     .about-photo {
       width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 4px;
       filter: grayscale(20%);
       border: 1px solid rgba(79,156,249,0.2);
@@ -233,7 +232,8 @@
       display: inline-block;
       padding: 14px 36px;
       border: 1px solid var(--accent);
-      color: var(--accent);
+      background: var(--accent);
+      color: var(--navy);
       text-decoration: none;
       font-size: 0.95rem;
       letter-spacing: 0.06em;
@@ -242,8 +242,7 @@
     }
  
     .contact-link:hover {
-      background: var(--accent);
-      color: var(--navy);
+      background: var(--light);
     }
  
     /* ── FOOTER ── */
@@ -305,14 +304,13 @@
     <div class="divider"></div>
     <div class="about-grid">
       <div>
-        <!-- Replace src with your actual photo path -->
         <img src="images/MarcusMetcalf.JPG" alt="Marcus Metcalf" class="about-photo"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="about-photo-placeholder" style="display:none;">Photo coming soon</div>
       </div>
       <div class="about-text">
-        <p>Hi, I'm Marcus — add a few sentences about yourself here. Where are you from? What are you passionate about?</p>
-        <p>This is a great place to tell your story. What do you do, what are you working on, or what makes you unique?</p>
+        <p>Hi, I'm Marcus — I love to snowboard, game, and play pickleball. </p>
+        <p>As a SJSU undergraduate that has taken up the radio frequency field, I am passionate about what I do and plan to be successful wherever I land.  </p>
       </div>
     </div>
   </section>
@@ -323,13 +321,25 @@
     <h2 class="section-title">Get In Touch</h2>
     <div class="divider" style="margin: 0 auto 48px;"></div>
     <p>Have a question or want to connect? Feel free to reach out — I'd love to hear from you.</p>
-    <a href="mailto:your@email.com" class="contact-link">Say Hello →</a>
+    <button class="contact-link" onclick="toggleContact()">Say Hello →</button>
+    <div id="contact-info" style="display: none; margin-top: 32px;">
+      <p>📧 marcusjmetcalf@gmail.com</p>
+    </div>
   </section>
  
   <footer>
     <p>&copy; 2026 Marcus Metcalf. All rights reserved.</p>
   </footer>
- 
+  <script>
+    function toggleContact() {
+      var info = document.getElementById("contact-info");
+      if (info.style.display === "none") {
+        info.style.display = "block";
+      } else {
+        info.style.display = "none";
+      }
+    }
+  </script> 
 </body>
 </html>
 
